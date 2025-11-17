@@ -44,28 +44,31 @@ header {
     height: 200px;
 }
 
-.simple-card {
+.simple-card-overflow {
     background: white;
     padding: 15px;
     margin: 10px 0;
+    max-width: 800px;
+    max-height: 200px;  
     border-radius: 8px;
     box-shadow: 0 0 6px rgba(0,0,0,0.1);
-    overflow: auto;
-    transition: box-shadow 0.3s ease;
+    overflow-x: scroll;
 }
 
-.project-card-overflow {
+.long-card {
     background: white;
-    width: 2000px;
-    padding: 15px;
-    margin: 0 0;
+    display: flex;
+    width: fit-content;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .software-ball{
     width: 100px;
     height: 100px;
     display: inline-block;
-    background: #fafafa;
+    background: #5c5c5c;
     padding: 15px;
     margin: 10px 10px;
     border-radius: 50%;
