@@ -32,12 +32,13 @@ header {
 
 .expand-card {
     background: white;
+    height: 100px;
     padding: 15px;
     margin: 10px 0;
     border-radius: 8px;
     box-shadow: 0 0 6px rgba(0,0,0,0.1);
     overflow: auto;
-    transition: box-shadow 0.3s ease;
+    transition: height 0.5s;
 }
 
 .expand-card:hover{
@@ -45,30 +46,43 @@ header {
 }
 
 .simple-card-overflow {
-    background: white;
+    background: #fafafa;
     padding: 15px;
     margin: 10px 0;
-    max-width: 800px;
+    align-self: center;
+    max-width: 750px;
     max-height: 200px;  
     border-radius: 8px;
-    box-shadow: 0 0 6px rgba(0,0,0,0.1);
-    overflow-x: scroll;
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+    mask-image: radial-gradient(circle, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 94%);
 }
 
 .long-card {
-    background: white;
+    background: #fafafa;
     display: flex;
     width: fit-content;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    will-change: transform; 
+    animation: scrolling 10s linear infinite;
 }
+@keyframes scrolling {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
 
 .software-ball{
     width: 100px;
     height: 100px;
     display: inline-block;
-    background: #5c5c5c;
+    background: #fafafa;
     padding: 15px;
     margin: 10px 10px;
     border-radius: 50%;
@@ -77,6 +91,7 @@ header {
     background-position: center;
     background-repeat: no-repeat;
 }
+
 
 footer {
     text-align: center;
