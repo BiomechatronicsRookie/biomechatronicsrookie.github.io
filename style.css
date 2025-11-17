@@ -18,12 +18,40 @@ header {
     margin: auto;
 }
 
+.softwares {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
 .project-card {
     background: white;
     padding: 15px;
     margin: 10px 0;
     border-radius: 8px;
     box-shadow: 0 0 6px rgba(0,0,0,0.1);
+    overflow: auto;
+}
+
+.project-card-overflow {
+    background: white;
+    width: 2000px;
+    padding: 15px;
+    margin: 0 0;
+}
+
+.software-ball{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    background: #fafafa;
+    padding: 15px;
+    margin: 10px 10px;
+    border-radius: 50%;
+    background-image: var(--bg-url);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 footer {
