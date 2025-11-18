@@ -59,6 +59,15 @@ header {
     mask-image: radial-gradient(circle, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 94%);
 }
 
+.software-ball-group{
+    background: #fafafa;
+    padding: 0;
+    margin: 0 0;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+}
+
 .long-card {
     background: #fafafa;
     display: flex;
@@ -67,14 +76,17 @@ header {
     justify-content: center;
     align-items: center;
     will-change: transform; 
-    animation: scrolling 10s linear infinite;
+    animation: scrolling 15s linear infinite;
+}
+.long-card:hover{
+    animation-play-state: paused;
 }
 @keyframes scrolling {
     0% {
       transform: translateX(0%);
     }
     100% {
-      transform: translateX(-100%);
+      transform: translateX(-50%);
     }
   }
 
