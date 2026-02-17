@@ -2,34 +2,53 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Main Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victor Carmona | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main-style.css">
 </head>
 <body>
     <header>
-        <h1>Víctor Carmona </h1>
-        <p>
-            <a href="https://github.com/BiomechatronicsRookie?tab=repositories"> <img loading="lazy" width="30" height="30" hspace="5" src="./imgs/github-mark.svg" alt="Github Link"></a>
-            <a href="https://www.linkedin.com/in/victoraco/"> <img loading="lazy" width="30" height="30" hspace="5" src="./imgs/logo-linkeidin-black.png" alt="LinkedIn Link"></a>
-        
-        </p>
+        <h1>Victor Carmona</h1>
+        <p class="hero-copy">Biomechatronics and robotics projects at the intersection of controls, CV, and embedded systems.</p>
+        <div class="socials">
+            <a href="https://github.com/BiomechatronicsRookie?tab=repositories" aria-label="GitHub">
+                <img loading="lazy" width="28" height="28" src="./imgs/github-mark-white.svg" alt="GitHub Link">
+            </a>
+            <a href="https://www.linkedin.com/in/victoraco/" aria-label="LinkedIn">
+                <img loading="lazy" width="28" height="28" src="./imgs/logo-linkedin.png" alt="LinkedIn Link">
+            </a>
+        </div>
     </header>
 
     <section class="projects">
         <h2>Projects</h2>
-        <div class="expand-card">
-            <h3>GableCORE</h3>
-            <p>A short description of your robotics project.</p>
-        </div>
+        <div class="project-grid">
+            <article class="expand-card" tabindex="0">
+                <h3>GableCORE</h3>
+                <p>Robotics control architecture for reliable mechatronics experiments and modular deployment.</p>
+                <video class="project-video" autoplay muted loop playsinline controls preload="metadata">
+                    <source src="./videos/gablecore.mp4" type="video/mp4">
+                </video>
+            </article>
 
-        <div class="expand-card">
-            <h3>CV Biomarker Extraction</h3>
-            <p>A short description of your robotics project.</p>
-        </div>
+            <article class="expand-card" tabindex="0">
+                <h3>CV Biomarker Extraction</h3>
+                <p>Computer-vision pipeline for robust extraction of motion biomarkers from video sequences.</p>
+                <video class="project-video" autoplay muted loop playsinline controls preload="metadata">
+                    <source src="./videos/cv-biomarkers-web.mp4" type="video/mp4">
+                </video>
+            </article>
 
-        <div class="expand-card">
-            <h3>ArmTracker</h3>
-            <p>A short description of your robotics project.</p>
+            <article class="expand-card" tabindex="0">
+                <h3>ArmTracker</h3>
+                <p>Real-time arm tracking for human motion capture and assistive robotics prototyping.</p>
+                <video class="project-video" autoplay muted loop playsinline controls preload="metadata">
+                    <source src="./videos/armtracker-web.mp4" type="video/mp4">
+                </video>
+            </article>
         </div>
     </section>
 
@@ -38,27 +57,13 @@
         <div class="simple-card-overflow">
             <div class ="long-card">
                 <div class="software-ball-group">
-                    <div class="software-ball" style="--bg-url: url('./imgs/logo-python.png')">
-                    </div>
-                    <div class="software-ball" style="--bg-url: url('./imgs/logo-c.png')">
-                    </div>
-                    <div class="software-ball" style="--bg-url: url('./imgs/logo-matlab.png')">
-                    </div>
-                    <div class="software-ball" style="--bg-url: url('./imgs/logo-twincat.png')">
-                    </div>
-                    <div class="software-ball" style="--bg-url: url('./imgs/logo-stm32.png')">
-                    </div>
-                </div>
-                <div aria-hidden class="software-ball-group">
-                    <div class="software-ball" style="--bg-url: url('./imgs/logo-python.png')">
-                    </div>
-                    <div class="software-ball" style="--bg-url: url('./imgs/logo-c.png')">
-                    </div>
-                    <div class="software-ball" style="--bg-url: url('./imgs/logo-matlab.png')">
-                    </div>
-                    <div class="software-ball" style="--bg-url: url('./imgs/logo-twincat.png')">
-                    </div>
-                    <div class="software-ball" style="--bg-url: url('./imgs/logo-stm32.png')">
+                    <div class="software-ball" style="--bg-url: url('./imgs/logo-python.png')"></div>
+                    <div class="software-ball" style="--bg-url: url('./imgs/logo-c.png')"></div>
+                    <div class="software-ball" style="--bg-url: url('./imgs/cpp-logo.png')"></div>
+                    <div class="software-ball" style="--bg-url: url('./imgs/logo-ros2.svg')"></div>
+                    <div class="software-ball" style="--bg-url: url('./imgs/logo-matlab.png')"></div>
+                    <div class="software-ball" style="--bg-url: url('./imgs/logo-twincat.png')"></div>
+                    <div class="software-ball" style="--bg-url: url('./imgs/logo-stm32.png')"></div>
                 </div>
             </div>
         </div>
@@ -66,13 +71,27 @@
 
     <section class="publications">
         <h2>Publications</h2>
-        <div class="project-card">
+        <div class="pub-list">
+            <article class="project-card pub-card">
+                <p class="pub-title">A Stiffness-Fault-Tolerant Control Strategy for an Elastically Actuated Powered Knee Orthosis</p>
+                <p class="pub-authors">R. J. Velasco-Guillen et al.</p>
+                <p class="pub-venue">2020 8th IEEE RAS/EMBS International Conference for Biomedical Robotics and Biomechatronics (BioRob), New York, NY, USA, 2020, pp. 660-665.</p>
+                <p class="pub-doi">DOI: <a href="https://doi.org/10.1109/BioRob49111.2020.9224403">10.1109/BioRob49111.2020.9224403</a></p>
+                <p class="pub-keywords"><strong>Keywords:</strong> Actuators, Torque, Springs, Trajectory, Impedance, Robots, Estimation</p>
+            </article>
+
+            <article class="project-card pub-card">
+                <p class="pub-title">Development and Pilot Evaluation of the ArmTracker: A Wearable System to Monitor Arm Kinematics During Daily Life</p>
+                <p class="pub-authors">V. A. Carmona-Ortiz, J. Lobo-Prat, J. Van Ruysevelt, C. Torras and J. M. Font-Llagunes</p>
+                <p class="pub-venue">2020 8th IEEE RAS/EMBS International Conference for Biomedical Robotics and Biomechatronics (BioRob), New York, NY, USA, 2020, pp. 759-764.</p>
+                <p class="pub-doi">DOI: <a href="https://doi.org/10.1109/BioRob49111.2020.9224302">10.1109/BioRob49111.2020.9224302</a></p>
+                <p class="pub-keywords"><strong>Keywords:</strong> Sensors, Kinematics, Prototypes, Biomedical monitoring, Torso, Robot sensing systems, Elbow</p>
+            </article>
         </div>
     </section>
-    
 
     <footer>
-        <p>© 2025 My Portfolio</p>
+        <p>© 2026 Victor Carmona</p>
     </footer>
 
     <script src="script.js"></script>
