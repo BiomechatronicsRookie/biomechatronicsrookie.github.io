@@ -98,7 +98,7 @@ h2 {
 
 .expand-card:hover,
 .expand-card:focus-within {
-    transform: translateY(-4px) scale(2);
+    transform: translateY(-4px) scale(1.7);
     box-shadow: 0 14px 34px rgba(21, 35, 53, 0.14);
     z-index: 40;
 }
