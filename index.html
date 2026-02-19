@@ -20,35 +20,58 @@
             <a href="https://www.linkedin.com/in/victoraco/" aria-label="LinkedIn">
                 <img loading="lazy" width="28" height="28" src="./imgs/logo-linkedin.png" alt="LinkedIn Link">
             </a>
+            <a href="mailto:victor.carmona.ortiz@gmail.com" aria-label="Email">
+                <img loading="lazy" width="28" height="28" src="./imgs/email-white.svg" alt="Email Link">
+            </a>
         </div>
     </header>
 
     <section class="projects">
         <h2>Projects</h2>
-        <div class="project-grid">
-            <article class="expand-card" tabindex="0">
-                <h3>GableCORE</h3>
-                <p>Robotics control architecture for reliable mechatronics experiments and modular deployment.</p>
-                <video class="project-video" autoplay muted loop playsinline controls preload="metadata">
-                    <source src="./videos/gablecore-web.mp4" type="video/mp4">
-                </video>
-            </article>
+        <div class="projects-carousel" aria-label="Project carousel">
+            <button class="carousel-arrow" type="button" data-carousel-dir="-1" aria-label="Previous project">&#8249;</button>
+            <div class="project-viewport">
+                <div class="project-track">
+                    <a class="project-link" href="./gablecore.html" aria-label="Open GableCORE project page">
+                        <article class="expand-card expand-card-reveal">
+                            <h3>GableCORE</h3>
+                            <p>Robotics control architecture for reliable mechatronics experiments and modular deployment.</p>
+                            <video class="project-video project-video-reveal" autoplay muted loop playsinline controls preload="metadata">
+                                <source src="./videos/gablecore-web.mp4" type="video/mp4">
+                            </video>
+                        </article>
+                    </a>
 
-            <article class="expand-card" tabindex="0">
-                <h3>CV Biomarker Extraction</h3>
-                <p>Computer-vision pipeline for robust extraction of motion biomarkers from video sequences.</p>
-                <video class="project-video" autoplay muted loop playsinline controls preload="metadata">
-                    <source src="./videos/cv-biomarkers-web.mp4" type="video/mp4">
-                </video>
-            </article>
+                    <a class="project-link" href="./cv-biomarker-extraction.html" aria-label="Open CV Biomarker Extraction project page">
+                        <article class="expand-card">
+                            <h3>CV Biomarker Extraction</h3>
+                            <p>Digital biomarker development for postural instability in Parkinson's disease, enabling more objective and standardized clinical monitoring.</p>
+                            <video class="project-video" autoplay muted loop playsinline controls preload="metadata">
+                                <source src="./videos/cv-biomarkers-web.mp4" type="video/mp4">
+                            </video>
+                        </article>
+                    </a>
 
-            <article class="expand-card" tabindex="0">
-                <h3>ArmTracker</h3>
-                <p>Real-time arm tracking for human motion capture and assistive robotics prototyping.</p>
-                <video class="project-video" autoplay muted loop playsinline controls preload="metadata">
-                    <source src="./videos/armtracker-web.mp4" type="video/mp4">
-                </video>
-            </article>
+                    <a class="project-link" href="./armtracker.html" aria-label="Open ArmTracker project page">
+                        <article class="expand-card">
+                            <h3>ArmTracker</h3>
+                            <p>Wearable sensing for continuous, non-obtrusive multi-segment arm kinematics monitoring to support personalized home-based rehabilitation.</p>
+                            <video class="project-video" autoplay muted loop playsinline controls preload="metadata">
+                                <source src="./videos/armtracker-web.mp4" type="video/mp4">
+                            </video>
+                        </article>
+                    </a>
+
+                    <a class="project-link" href="./test-engineer-marine-fleet.html" aria-label="Open Test Engineer project page">
+                        <article class="expand-card">
+                            <h3>Test Engineer - Marine Fleet</h3>
+                            <p>Validation and testing support for marine systems, with a focus on reliability, readiness, and field verification.</p>
+                            <img class="project-video" loading="lazy" src="./imgs/Pontoon.jpg" alt="Marine fleet vessel pontoon">
+                        </article>
+                    </a>
+                </div>
+            </div>
+            <button class="carousel-arrow" type="button" data-carousel-dir="1" aria-label="Next project">&#8250;</button>
         </div>
     </section>
 
