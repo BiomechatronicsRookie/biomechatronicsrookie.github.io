@@ -3,6 +3,7 @@ console.log("Portfolio loaded!");
 const expandCards = document.querySelectorAll(".expand-card");
 const softwareTracks = document.querySelectorAll(".long-card");
 const projectVideos = document.querySelectorAll(".project-video");
+const projectCarousels = document.querySelectorAll(".projects-carousel");
 
 const getYouTubeId = (value = "") => {
     const trimmed = value.trim();
@@ -118,6 +119,107 @@ expandCards.forEach((card) => {
     card.addEventListener("focusout", pauseVideos);
     card.addEventListener("click", playVideos);
     card.addEventListener("touchstart", playVideos, { passive: true });
+});
+
+const setupProjectCarousel = (carousel) => {
+    const track = carousel.querySelector(".project-track");
+    const prev = carousel.querySelector('button[data-carousel-dir="-1"]');
+    const next = carousel.querySelector('button[data-carousel-dir="1"]');
+
+    if (!track || !prev || !next) {
+        return;
+    }
+
+    const cards = Array.from(track.querySelectorAll(".project-link"));
+    if (cards.length < 2) {
+        return;
+    }
+
+    let isAnimating = false;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const getStep = () => {
+        const firstCard = track.querySelector(".project-link");
+        if (!firstCard) {
+            return 0;
+        }
+        const cardWidth = firstCard.getBoundingClientRect().width;
+        const trackStyles = window.getComputedStyle(track);
+        const gap = Number.parseFloat(trackStyles.gap || "0") || 0;
+        return cardWidth + gap;
+    };
+
+    const resetTrackPosition = () => {
+        track.style.transition = "none";
+        track.style.transform = "translateX(0)";
+    };
+
+    const animateTransform = (value) => {
+        if (reducedMotion) {
+            track.style.transition = "none";
+            track.style.transform = `translateX(${value}px)`;
+            return Promise.resolve();
+        }
+
+        return new Promise((resolve) => {
+            track.style.transition = "transform 0.35s ease";
+            requestAnimationFrame(() => {
+                track.style.transform = `translateX(${value}px)`;
+            });
+
+            const complete = () => {
+                track.removeEventListener("transitionend", complete);
+                resolve();
+            };
+
+            track.addEventListener("transitionend", complete, { once: true });
+            setTimeout(complete, 450);
+        });
+    };
+
+    prev.addEventListener("click", async () => {
+        if (isAnimating) {
+            return;
+        }
+        const step = getStep();
+        if (!step) {
+            return;
+        }
+
+        isAnimating = true;
+        track.prepend(track.lastElementChild);
+        track.style.transition = "none";
+        track.style.transform = `translateX(${-step}px)`;
+        // Force reflow so the browser applies the starting transform before animating.
+        track.getBoundingClientRect();
+        await animateTransform(0);
+        resetTrackPosition();
+        isAnimating = false;
+    });
+
+    next.addEventListener("click", async () => {
+        if (isAnimating) {
+            return;
+        }
+        const step = getStep();
+        if (!step) {
+            return;
+        }
+
+        isAnimating = true;
+        await animateTransform(-step);
+        track.append(track.firstElementChild);
+        resetTrackPosition();
+        isAnimating = false;
+    });
+
+    window.addEventListener("resize", resetTrackPosition);
+    window.addEventListener("load", resetTrackPosition);
+    resetTrackPosition();
+};
+
+projectCarousels.forEach((carousel) => {
+    setupProjectCarousel(carousel);
 });
 
 const setupSoftwareMarquee = () => {
