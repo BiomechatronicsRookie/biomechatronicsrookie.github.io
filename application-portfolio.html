@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victor Carmona | Portfolio for Applications</title>
+    <style>
+        :root {
+            --ink: #132238;
+            --muted: #4f627b;
+            --line: #d8e2ed;
+            --brand: #0f7f73;
+            --surface: #ffffff;
+            --bg: #f3f7fb;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+            color: var(--ink);
+            background: var(--bg);
+            line-height: 1.5;
+        }
+
+        .page {
+            max-width: 920px;
+            margin: 28px auto;
+            padding: 34px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 18px;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            margin: 8px 0 0;
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        .contact {
+            text-align: right;
+            font-size: 0.95rem;
+        }
+
+        .contact a {
+            color: var(--ink);
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            color: var(--brand);
+            text-decoration: underline;
+        }
+
+        .section {
+            margin-bottom: 24px;
+        }
+
+        .video-notice {
+            margin: 0 0 24px;
+            padding: 12px 14px;
+            border: 1px solid #b8d8d2;
+            border-left: 5px solid var(--brand);
+            border-radius: 10px;
+            background: #eef8f6;
+            color: #1f3448;
+            font-size: 0.96rem;
+        }
+
+        .video-notice strong {
+            color: #0e5e56;
+        }
+
+        .video-notice a {
+            color: #0e5e56;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .video-notice a:hover {
+            text-decoration: underline;
+        }
+
+        .section h2 {
+            margin: 0 0 10px;
+            font-size: 1.05rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--brand);
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .chip {
+            display: inline-block;
+            padding: 6px 10px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        .project-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .project {
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 14px;
+            display: grid;
+            grid-template-columns: 1fr 168px;
+            gap: 14px;
+            align-items: start;
+        }
+
+        .project h3 {
+            margin: 0;
+            font-size: 1.05rem;
+        }
+
+        .meta {
+            margin: 4px 0 8px;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .project p {
+            margin: 0 0 8px;
+        }
+
+        .project-thumb {
+            width: 100%;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            background: #eef3f8;
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 16 / 9;
+        }
+
+        .project-thumb.vertical {
+            aspect-ratio: 9 / 16;
+            object-fit: contain;
+            background: #0d1522;
+        }
+
+        .project a,
+        .publication a {
+            color: var(--brand);
+            text-decoration: none;
+        }
+
+        .project a:hover,
+        .publication a:hover {
+            text-decoration: underline;
+        }
+
+        .publication {
+            border-top: 1px solid var(--line);
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+
+        .publication:first-of-type {
+            border-top: 0;
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+        .publication .title {
+            font-weight: 600;
+        }
+
+        .footnote {
+            margin-top: 22px;
+            color: var(--muted);
+            font-size: 0.84rem;
+            border-top: 1px solid var(--line);
+            padding-top: 10px;
+        }
+
+        @media (max-width: 760px) {
+            .page {
+                margin: 0;
+                border-radius: 0;
+                border-left: 0;
+                border-right: 0;
+                padding: 20px;
+            }
+
+            .header {
+                flex-direction: column;
+            }
+
+            .contact {
+                text-align: left;
+            }
+
+            .project {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            @page {
+                margin: 12mm;
+                size: A4;
+            }
+
+            body {
+                background: #fff;
+            }
+
+            .page {
+                margin: 0;
+                border: 0;
+                border-radius: 0;
+                padding: 0;
+                max-width: none;
+            }
+
+            a {
+                color: inherit;
+            }
+
+            .project {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .gablecore-thumb-print {
+                width: 112px;
+                justify-self: end;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <header class="header">
+            <div>
+                <h1>Victor Carmona</h1>
+                <p class="subtitle">Biomechatronics and Robotics Engineer</p>
+                <p class="subtitle">Focused on controls, computer vision, embedded systems, and wearable sensing for rehabilitation.</p>
+            </div>
+            <div class="contact">
+                <div><a href="mailto:victor.carmona.ortiz@gmail.com">victor.carmona.ortiz@gmail.com</a></div>
+                <div><a href="https://www.linkedin.com/in/victoraco/">linkedin.com/in/victoraco</a></div>
+                <div><a href="https://github.com/BiomechatronicsRookie?tab=repositories">github.com/BiomechatronicsRookie</a></div>
+                <div>Portfolio: biomechatronicsrookie.github.io</div>
+            </div>
+        </header>
+
+        <p class="video-notice">
+            <strong>Project videos available:</strong> A full version of this portfolio containing videos for the projects is available at
+            <a href="https://biomechatronicsrookie.github.io/">biomechatronicsrookie.github.io</a>.
+        </p>
+
+        <section class="section">
+            <h2>Core Areas</h2>
+            <div class="chips">
+                <span class="chip">Robotics Controls</span>
+                <span class="chip">Computer Vision</span>
+                <span class="chip">Wearable Sensing</span>
+                <span class="chip">Biomechatronics</span>
+                <span class="chip">Embedded Systems</span>
+                <span class="chip">Clinical Monitoring</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Selected Projects</h2>
+            <div class="project-list">
+                <article class="project">
+                    <div>
+                        <h3>GableCORE</h3>
+                        <p class="meta">Robotics Control Architecture</p>
+                        <p>The GableCORE is a novel gait rehabilitation platform aimed to give maximum freedom to it's users while still rendering a safe, reliable environment to relearn how to walk. In this project's context, I am currently the main robotics developer of the GableCORE, acting as software engineer, hardware engineer, technician and commisioning engineer. The main idea behind the GableCORE is the use biomechanical data extracted through computer vision to render an adpative haptic space that will help the patient keep balance during relearning to walk after a major motor disfunction.</p>
+                        <a href="https://biomechatronicsrookie.github.io/gablecore.html">Project page</a>
+                    </div>
+                    <img class="project-thumb gablecore-thumb-print" src="./imgs/gablecore-ip-placeholder.svg" alt="Image unavailable due to IP restrictions">
+                </article>
+
+                <article class="project">
+                    <div>
+                        <h3>Towards a Digital Biomarker for Postural Instability in Parkinson's Disease</h3>
+                        <p class="meta">Computer Vision and Clinical Digital Biomarkers</p>
+                        <p>Developed objective and standardized biomarker extraction workflows to support clinical monitoring of postural instability progression in Parkinson's disease.</p>
+                        <p>This work addresses limitations of subjective, manually administered assessments by providing reproducible quantitative indicators that can support treatment personalization and longitudinal follow-up.</p>
+                        <a href="https://biomechatronicsrookie.github.io/cv-biomarker-extraction.html">Project page</a>
+                    </div>
+                    <img class="project-thumb" src="./imgs/cv-biomarkers-poster.jpg" alt="CV Biomarker Extraction video still">
+                </article>
+
+                <article class="project">
+                    <div>
+                        <h3>ArmTracker</h3>
+                        <p class="meta">Wearable Sensing for Rehabilitation</p>
+                        <p>Built and evaluated a non-obtrusive wearable sensing system for long-term, multi-segment arm kinematics tracking in daily-life settings to support personalized rehabilitation.</p>
+                        <p>Unlike wrist-only monitoring approaches, ArmTracker captures richer upper-limb movement information over extended periods, enabling more precise activity profiling and better-informed therapy planning.</p>
+                        <a href="https://biomechatronicsrookie.github.io/armtracker.html">Project page</a>
+                    </div>
+                    <img class="project-thumb" src="./imgs/armtracker-poster.jpg" alt="ArmTracker video still">
+                </article>
+
+                <article class="project">
+                    <div>
+                        <h3>Test Engineer - Marine Fleet</h3>
+                        <p class="meta">Systems Validation and Reliability</p>
+                        <p>Contributed to test planning and execution workflows that support safer operations, traceable issue reporting, for the commissioning team in the context of the Fehmarnbelt Project</p>
+                        <a href="https://biomechatronicsrookie.github.io/test-engineer-marine-fleet.html">Project page</a>
+                    </div>
+                    <img class="project-thumb" src="./imgs/Pontoon.jpg" alt="Marine fleet image">
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Publications</h2>
+            <article class="publication">
+                <p class="title">A Stiffness-Fault-Tolerant Control Strategy for an Elastically Actuated Powered Knee Orthosis</p>
+                <p>R. J. Velasco-Guillen et al., BioRob 2020 (IEEE RAS/EMBS).</p>
+                <p>DOI: <a href="https://doi.org/10.1109/BioRob49111.2020.9224403">10.1109/BioRob49111.2020.9224403</a></p>
+            </article>
+            <article class="publication">
+                <p class="title">Development and Pilot Evaluation of the ArmTracker: A Wearable System to Monitor Arm Kinematics During Daily Life</p>
+                <p>V. A. Carmona-Ortiz et al., BioRob 2020 (IEEE RAS/EMBS).</p>
+                <p>DOI: <a href="https://doi.org/10.1109/BioRob49111.2020.9224302">10.1109/BioRob49111.2020.9224302</a></p>
+            </article>
+        </section>
+
+        <p class="footnote">Prepared as an application-ready portfolio summary. Export this page as PDF for job submissions.</p>
+    </main>
+</body>
+</html>
